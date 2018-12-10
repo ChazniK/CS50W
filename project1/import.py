@@ -1,4 +1,5 @@
 import os
+import csv
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
@@ -11,3 +12,4 @@ engine = create_engine(os.getenv("DATABASE_URL"))
 # database are kept separate
 db = scoped_session(sessionmaker(bind=engine))
 
+f = 
