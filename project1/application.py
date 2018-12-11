@@ -24,10 +24,10 @@ db = scoped_session(sessionmaker(bind=engine))
 def index():
     return render_template("register.html")
 
-@app.route("/info", methods=["POST"])
-def info():
-    username = request.form.get("username")
-    email = request.form.get("email")
-    password = request.form.get("password")
-    confirm_password = request.form.get("confrim_password")
-    return render_template("info.html", username=username, email=email, password=password, confirm_password=confirm_password)
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("404.html")
+
+@app.route("/login/", methods=['GET', 'POST'])
+def login_page():
+    return render_template("login.html")

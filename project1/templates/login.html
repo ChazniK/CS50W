@@ -9,14 +9,14 @@
 </head>
 <body>
     <div class="container">
-        <form>
+        <form action="" method="POST">
             <h1>Register / Login</h1>
 
             <label for="username">Username</label>
-            <input type="text" placeholder="Enter username">
+            <input type="text" placeholder="Enter username" name="username" value="{{ request.form.username }}">
 
             <label for="password">Password</label>
-            <input type="password" placeholder="Enter password">
+            <input type="password" placeholder="Enter password" name="password" value="{{ request.form.password }}">
 
             <button type="submit">Login</button>
             <span style="float:right"><p>Forgot Password</p></span>

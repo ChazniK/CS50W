@@ -13,9 +13,6 @@ engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
 
 def main():
-    # books = db.execute("SELECT * FROM books").fetchall()
-    # for book in books:
-    #     print(book) 
     f = open("books.csv")
     reader = csv.reader(f)
     for isbn, title, author, year in reader:
